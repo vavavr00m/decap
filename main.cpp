@@ -1,7 +1,9 @@
+#include <QApplication>
+#include "decapwindow.h"
+
 int main(int argc, char **argv){
-	if (argc != 3){
-		print_usage();
-		exit(EXIT_FAILURE);
-	}
-	return 0;
+	QApplication app(argc, argv);
+
+	DecapWindow win;
+	return win.exec();
 }

@@ -1,7 +1,15 @@
 #ifndef DECAPWINDOW_H
 #define DECAPWINDOW_H
 
-#include <QDialog>
+#include <QSystemTrayIcon>
+#include <QMainWindow>
+
+class QMenu;
+class QTabBar;
+class QTextEdit;
+class QLineEdit;
+class QVBoxLayout;
+class QAction;
 
 class DecapWindow : public QMainWindow {
 	Q_OBJECT
@@ -9,12 +17,33 @@ class DecapWindow : public QMainWindow {
 public:
 	DecapWindow();
 
+protected:
+	void closeEvent(QCloseEvent *event);
+
+private slots:
+	void about();
+	void iconActivated(QSystemTrayIcon::ActivationReason reason);
+
 private:
+	void createActions();
+	void createMenu();
+	void createTrayIcon();
+	void setVisible(bool visible);
+
 	QMenu *fileMenu;
 	QMenu *helpMenu;
-	QTabWidget *channelTabs;
+	QAction *restoreAction;
+	QAction *minimizeAction;
+	QAction *maximizeAction;
+	QAction *exitAction;
+	QAction *aboutAction;
+	QAction *aboutQtAction;
+	QTabBar *channelTabs;
 	QTextEdit *textEdit;
 	QLineEdit *lineEdit;
+
+	QSystemTrayIcon *trayIcon;
+	QMenu *trayIconMenu;
 };
 
 #endif // DECAPWINDOW_H

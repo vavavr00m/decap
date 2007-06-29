@@ -1,16 +1,19 @@
 #ifndef IRC_H
 #define IRC_H IRC_H
 
-class IRC {
+#include <QtNetwork/QHostAddress>
+#include <QtNetwork/QTcpSocket>
+
+class IRC : public QTcpSocket {
 	Q_OBJECT
 
 public:
-	IRC();
+	IRC(QObject *parent = 0);
 	~IRC();
 	bool isConnected();
 
 private slots:
-	void connectToHost(const QHostAddress &newhost, quint16 newport);
+	void connectToHost(const QHostAddress &newhost, const quint16 newport);
 	void disconnect();
 	void sendCommand(QString command);
 

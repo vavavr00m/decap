@@ -8,8 +8,9 @@ class QMenu;
 class QTabBar;
 class QTextEdit;
 class QLineEdit;
-class QVBoxLayout;
+class QGridLayout;
 class QAction;
+class QLabel;
 
 class DecapWindow : public QMainWindow {
 	Q_OBJECT
@@ -39,6 +40,10 @@ private:
 	QAction *aboutAction;
 	QAction *aboutQtAction;
 	QTabBar *channelTabs;
+	QLabel *hostLabel;
+	QLabel *portLabel;
+	QLineEdit *hostLineEdit;
+	QLineEdit *portLineEdit;
 	QTextEdit *textEdit;
 	QLineEdit *lineEdit;
 

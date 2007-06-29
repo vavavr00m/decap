@@ -4,6 +4,7 @@ using namespace std;
 #include <QtGui>
 
 #include "decapwindow.h"
+#include "channelview.h"
 
 DecapWindow::DecapWindow() {
 	QWidget* centralWidget = new QWidget(this);
@@ -26,6 +27,7 @@ DecapWindow::DecapWindow() {
 	layout->addWidget(portLabel,1,0);
 	layout->addWidget(hostLineEdit,0,1);
 	layout->addWidget(portLineEdit,1,1);
+	layout->addWidget(new ChannelView(), 2, 1);
 
 	createActions();
 	createMenu();

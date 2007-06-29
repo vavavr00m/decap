@@ -5,6 +5,7 @@ using namespace std;
 
 #include "decapwindow.h"
 #include "channelview.h"
+#include "connectform.h"
 
 DecapWindow::DecapWindow() {
 	QWidget* centralWidget = new QWidget(this);
@@ -16,11 +17,8 @@ DecapWindow::DecapWindow() {
 	channelTabs->addTab(QString("#kde4-devel"));
 	layout->addWidget(channelTabs);
 */	
-	Ui::connectForm asdf;
-	QWidget *foo = new QWidget;
-	asdf.setupUi(foo);
-	layout->addWidget(foo,0,0);
 	layout->addWidget(new ChannelView(), 1, 0);
+	layout->addWidget(new connectForm(),2,0);
 
 	createActions();
 	createMenu();

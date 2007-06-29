@@ -3,6 +3,7 @@
 
 #include <QSystemTrayIcon>
 #include <QMainWindow>
+#include "ui_connectForm.h"
 
 class QMenu;
 class QTabBar;

@@ -9,16 +9,14 @@ ChannelView::ChannelView(QWidget *parent) : QWidget(parent) {
 	submitButton->setMaximumHeight(22);
 	submitButton->setDefault(true);
 	
-	QHBoxLayout *hlayout = new QHBoxLayout();
-	hlayout->addWidget(lineEdit);
-	hlayout->addWidget(submitButton);
-	hlayout->setMargin(0);
 
 	textEdit = new QTextEdit(this);
 	textEdit->setReadOnly(true);
 	
-	QVBoxLayout *vlayout = new QVBoxLayout();
-	vlayout->addWidget(textEdit);
-	vlayout->addLayout(hlayout);
-	setLayout(vlayout);
+	QGridLayout *layout = new QGridLayout();
+	layout->addWidget(textEdit,0,0,1,2);
+	layout->addWidget(lineEdit,1,0);
+	layout->addWidget(submitButton,1,1);
+	layout->setMargin(0);
+	setLayout(layout);
 }

@@ -8,6 +8,12 @@ class connectForm : public QWidget {
 	
 	public:
 		connectForm(QWidget *parent = 0);
+		QString getHost(void) const;
+		int getPort(void) const;
+
+	private:
+		QLineEdit *hostLineEdit;
+		QLineEdit *portLineEdit;
 };
 
 #endif // CONNECTFORM_H

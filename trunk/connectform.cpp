@@ -3,8 +3,8 @@
 connectForm::connectForm(QWidget *parent) : QWidget(parent) {
 	QLabel *hostLabel = new QLabel(QString("&Host:"), this);
 	QLabel *portLabel = new QLabel(QString("Por&t:"), this);
-	QLineEdit *hostLineEdit = new QLineEdit(QString("irc.freenode.net"), this);
-	QLineEdit *portLineEdit = new QLineEdit(QString("6667"), this);
+	hostLineEdit = new QLineEdit(QString("irc.freenode.net"), this);
+	portLineEdit = new QLineEdit(QString("6667"), this);
 
 	hostLabel->setBuddy(hostLineEdit);
 	portLabel->setBuddy(portLineEdit);
@@ -16,4 +16,12 @@ connectForm::connectForm(QWidget *parent) : QWidget(parent) {
 	layout->addWidget(portLineEdit,1,1);
 	layout->setMargin(0);
 	setLayout(layout);
+}
+
+QString connectForm::getHost(void) const {
+	return hostLineEdit->text();
+}
+
+int connectForm::getPort(void) const {
+	return portLineEdit->text().toInt();
 }

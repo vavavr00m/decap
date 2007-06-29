@@ -16,18 +16,11 @@ DecapWindow::DecapWindow() {
 	channelTabs->addTab(QString("#kde4-devel"));
 	layout->addWidget(channelTabs);
 */	
-
-	hostLabel = new QLabel(QString("Host:"));
-	portLabel = new QLabel(QString("Port:"));
-
-	hostLineEdit = new QLineEdit(QString("irc.freenode.net"));
-	portLineEdit = new QLineEdit(QString("6667"));
-
-	layout->addWidget(hostLabel,0,0);
-	layout->addWidget(portLabel,1,0);
-	layout->addWidget(hostLineEdit,0,1);
-	layout->addWidget(portLineEdit,1,1);
-	layout->addWidget(new ChannelView(), 2, 1);
+	Ui::connectForm asdf;
+	QWidget *foo = new QWidget;
+	asdf.setupUi(foo);
+	layout->addWidget(foo,0,0);
+	layout->addWidget(new ChannelView(), 1, 0);
 
 	createActions();
 	createMenu();

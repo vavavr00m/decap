@@ -12,8 +12,6 @@ class ChannelView : public QWidget {
 	private:
 		QLineEdit *lineEdit;
 		QTextEdit *textEdit;
-		QPushButton *submitButton;
-
 };
 
 #endif	//CHANNELVIEW_H

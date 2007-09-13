@@ -8,7 +8,6 @@ using namespace std;
 
 IRC::IRC(QObject *parent) : QTcpSocket(parent), socket(NULL), host(NULL), port(0) {
 	cout << "created irc object" << endl;
-
 }
 
 IRC::~IRC(){

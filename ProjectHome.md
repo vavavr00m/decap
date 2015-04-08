@@ -1,0 +1,5 @@
+Decap is an advanced irc client based on [ii](http://www.suckless.org/wiki/tools/irc). Decap uses Qt 4.3 to create a graphical wrapper around ii's output. This allows you to inherit irc sessions from multiple clients at the same time, for example on a work computer, a home computer and a school computer.
+
+This represents a radical departure from current software implementations, as decap can utilize the same advanced irc features as a normal graphical irc client, but the persistent "decapitated" nature of the backend allows the frontend to roam with the user, or be completely shutdown without losing track of conversations or channel logs.
+
+Decap also hooks nicely into [BitlBee](http://www.bitlbee.org), allowing full participation on any supported IM protocol. Decap lets you view buddy pictures inline, transfer files via drag-and-drop, and many other advanced features unavailable on command-line irc clients.
